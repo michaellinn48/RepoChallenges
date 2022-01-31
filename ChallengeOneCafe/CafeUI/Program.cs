@@ -1,4 +1,5 @@
 ﻿using System;
+using CafeUI.Consoles;
 
 namespace CafeUI
 {
@@ -6,7 +7,11 @@ namespace CafeUI
     {
         static void Main(string[] args)
         {
-            // where we will build the UI
+            // what console I want to use
+            IConsole console = new RealConsole();
+            // pass that info to my UI
+            UserInterface ui = new UserInterface(console);
+            ui.Run();
         }
     }
 }
